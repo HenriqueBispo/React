@@ -12,4 +12,4 @@ FirstComponent = () => {
 
 }
 
-export default FirstComponent.jsx
+export default FirstComponent
