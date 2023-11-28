@@ -18,3 +18,5 @@ const TemplateExpressions = () => {
   )
   
 }
+
+export default TemplateExpressions
