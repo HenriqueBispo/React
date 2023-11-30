@@ -13,6 +13,8 @@ import './App.css'
 import FirstComponent from './components/FirstComponent'
 import TemplateExpressions from './components/TemplateExpressions'
 import Events from './components/Events'
+import Challenge from './components/Challenge'
+import Challengeversaoprof from './components/Challengeversaoprof'
 
 
 function App() {
@@ -23,8 +25,13 @@ function App() {
       <h1>Este h1 está no App.jsx</h1>
 
       <FirstComponent />
+      <hr />
       <TemplateExpressions />
+      <hr />
       <Events />
+      <Challenge />
+      <br /><br /><br /><hr />
+      <Challengeversaoprof />
 
     </div>
   )
