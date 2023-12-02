@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
 
 const ListRender = () => {
     const [carrinho, setCarrinho] = useState(0);
@@ -116,19 +117,6 @@ const ListRender = () => {
                 <button className='botao' onClick={() => toggleMostrarProdutos('carrinho')}>Mostrar Carrinho ({carrinho})</button>
             </div><br /><br />
 
-            <div>
-                <form action="" method="post">
-                    Número de cartão: <input type="text" name="" id="" />
-                    <br />
-                    CVV: <input type="text" name="" id="" />
-                    <br />
-                    Nome no Cartão: <input type="text" name="" id="" />
-                    <br />
-                    <input type="submit" value="Confirmar compra" />
-                    <br /><br /><hr /><br /><br />
-                </form>
-            </div>
-
             {mostrarProdutos === 'carrinho' && (
                 <div>
                     <h2>Produtos no Carrinho</h2>
@@ -144,6 +132,24 @@ const ListRender = () => {
                     </ul>
                 </div>
             )}
+
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+            <div>
+                <form action="" method="post">
+                    Número de cartão: <input type="text" name="" id="" />
+                    <br />
+                    CVV: <input type="text" name="" id="" />
+                    <br />
+                    Nome no Cartão: <input type="text" name="" id="" />
+                    <br />
+                    <input type="submit" value="Confirmar compra" />
+                    <br /><br /><hr /><br /><br />
+                </form>
+            </div>
+
+            
         </div>
     );
 };
