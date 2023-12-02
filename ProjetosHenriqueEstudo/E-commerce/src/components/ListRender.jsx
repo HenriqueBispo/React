@@ -5,14 +5,18 @@ const ListRender = () => {
     const [mostrarProdutos, setMostrarProdutos] = useState('comprar');
     const [produtosNoCarrinho, setProdutosNoCarrinho] = useState([]);
 
-    const addToCarrinho = (produto) => {
+    const addToCarrinho  = (produto) => {
         setCarrinho(carrinho + 1);
         setProdutosNoCarrinho([...produtosNoCarrinho, produto]);
         console.log('Produto adicionado ao carrinho:', produto.NomeProduto);
     };
 
+    const calcularTotal = () => {
+        const total = produtosNoCarrinho.reduce((acc, produto) => acc + produto.Preço, 0);
+        return total.toFixed(2);
+    };
+
     const comprar = () => {
-        // Adicione lógica de compra aqui, se necessário
         console.log('Compra realizada');
     };
 
@@ -109,44 +113,34 @@ const ListRender = () => {
             </div>
 
             <div className="MenuBar">
-                <button onClick={() => toggleMostrarProdutos('carrinho')}>Mostrar Carrinho ({carrinho})</button>
-            </div>
+                <button className='botao' onClick={() => toggleMostrarProdutos('carrinho')}>Mostrar Carrinho ({carrinho})</button>
+            </div><br /><br />
 
             <div>
-
-            <form action="" method="post">
-
-                Número de cartão: <input type="text" name="" id="" />
-                <br />
-                CVV: <input type="text" name="" id="" />
-                <br />
-                Nome no Cartão: <input type="text" name="" id="" />
-                <br />
-                <input type="submit" value="Comfirmar comprar" />
-                <br /><br /><hr /><br /><br />
-
-            </form>
-
-
+                <form action="" method="post">
+                    Número de cartão: <input type="text" name="" id="" />
+                    <br />
+                    CVV: <input type="text" name="" id="" />
+                    <br />
+                    Nome no Cartão: <input type="text" name="" id="" />
+                    <br />
+                    <input type="submit" value="Confirmar compra" />
+                    <br /><br /><hr /><br /><br />
+                </form>
             </div>
 
             {mostrarProdutos === 'carrinho' && (
                 <div>
                     <h2>Produtos no Carrinho</h2>
-
+                    <h3>Total: {calcularTotal()}</h3>
                     <ul className='ulCarrinho'>
-
                         {produtosNoCarrinho.map((produto, index) => (
-                            
                             <li className='liCarrinho' key={index}> 
-                                <div className={`ImgCarrinho ${produto.smallImage ? 'small' : ''}`}>{produto.img}</div><br />
+                                <div className="ImgCarrinho">{produto.img}</div><br />
                                 <div className='divNomeProduto'>{produto.NomeProduto}</div><br />
                                 <div className='divPreco'>Preço: {produto.Preço}</div> 
-                                
                             </li>
-
                         ))}
-
                     </ul>
                 </div>
             )}
