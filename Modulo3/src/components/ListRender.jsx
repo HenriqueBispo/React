@@ -2,30 +2,14 @@ import { useState } from "react"
 
 const ListRender = () => {
 
-    const [list] = useState([ 
-        
-        {
-            img: <img className="img" src="/img1.jpg" alt="Produto 1" />,
-            NomeProduto: "Item 1",
-            Preço: 39.50,
-            Promoção: 0
-            
-          },
-          {
-            img: <img className="img" src="/img1.jpg" alt="produto 2"/>,
-            NomeProduto: "Item 2",
-            Preço: 50.00,
-            Promoção: 0
+    const [list] = useState(["Henrique", "P1", "P2", "Renato", "Pietro"])
 
-          },
-          {
-            img: <img className="img" src="/img1.jpg" alt="Produto 3" />,
-            NomeProduto: "Item 3",
-            Preço: 1.000,
-            Promoção: 0
-          }
-
-        ])
+    const [users] = useState([
+      { id: 5661, name: "Matheus", age: 31},
+      { id: 5662, name: "João", age: 28},
+      { id: 5663, name: "Pedro", age: 44},
+      { id: 5664, name: "Henrique", age: 17}
+    ])
 
   return (
 
@@ -35,16 +19,24 @@ const ListRender = () => {
 
         {list.map((item, index) => (
 
-            <li key={index}>
-                {item.img}
-                <div>{item.NomeProduto}</div>
-                <div>Preço: {item.Preço}</div>
-                <div>Promoção: {item.Promoção}</div>
-            </li>
+          <li key={index}>{item}</li>
 
         ))
         
         }
+
+        <br /><br /><hr /><br /><br />
+
+        {users.map((user) => (
+
+          <li key={user.id}>
+
+          {user.name} - {user.age}
+
+          </li>
+
+
+        ))}
 
     </ul>
 
