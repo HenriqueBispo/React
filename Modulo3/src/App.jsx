@@ -14,6 +14,7 @@ import './App.css'
 import FirstComponent from './components/FirstComponent'
 import ManageData from './components/ManageData'
 import ListRender from './components/ListRender'
+import ConditionalRender from './components/ConditionalRender'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,8 +38,12 @@ function App() {
 
     </div>
 
+    <br /><br /><hr /><h1>ManageData.jsx</h1><br /><br />
     <ManageData />
+    <br /><br /><br /><br /><hr /><h1>ListRender.jsx</h1><br /><br /><hr />
     <ListRender />
+    <br /><br /><br /><br /> <hr /><h1>Conditional.jsx</h1><br /><br /><hr />
+    <ConditionalRender />
 
     </>
   )
