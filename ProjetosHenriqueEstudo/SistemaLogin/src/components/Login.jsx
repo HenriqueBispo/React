@@ -149,7 +149,7 @@ const Login = ({ login }) => {
         <label htmlFor="email">
           <span>E-mail: </span>
           <input
-            type="text"
+            type="email"
             name="email"
             id="email"
             placeholder="Digite o seu e-mail!"
