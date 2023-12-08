@@ -1,22 +1,64 @@
 body {
+
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 500px;
+
 }
 
 h1 {
+
     color: red;
+
 }
 
 .red-title {
+
   background-color: #000;
   color: red;
   padding: 15px;
   border: 5px solid red;
+
 }
 
 .title {
+
   background-color: #000;
   color: #fff;
+
+}
+
+/* Desafio modulo 4*/
+
+
+.tarefa2 {
+
+  color: purple;
+  background-color: #000;
+  padding: 20px;
+
+}
+
+.ul-listCar {
+
+  list-style: none;
+
+}
+
+.li-listCar {
+
+
+}
+
+.p-listCar {
+
+  padding: 5px;
+  color: #fff;
+
+}
+
+.listCar {
+  background-color: #2c2c2c;
+  display: flex;
 }
