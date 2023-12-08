@@ -2,10 +2,19 @@ import './MyForm.css'
 
 import { useState } from 'react'
 
-const myForm = () => {
+const myForm = ( {user} ) => {
     // 3 - Gerenciamento de dados
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
+    // Adicionar esse user ? user.name ou user.email é util pra quando a pesso asalvou a senha e email com o chrome sabe então acontece q preenche sozinho e caso a pessoa nunca tenha entrado no site ou n tenha salvado com o chrome a senha e o email Vai ficar vazio
+    const [name, setName] = useState(user ? user.name : "")
+    const [email, setEmail] = useState(user ? user.email : "")
+
+    const handleLimpar = (e) => {
+
+        e.preventDefault()
+        setEmail("")
+        setName("")
+
+    }
 
     const handleName = (e) => {
 
@@ -39,17 +48,23 @@ const myForm = () => {
             <div>
 
                 <label htmlFor="name">Nome: </label>
-                <input type="text" name="name" id='name' placeholder="Digite o seu nome" onChange={handleName}/>
+                <input type="text" name="name" id='name' placeholder="Digite o seu nome" onChange={handleName}
+                value={name}
+                />
 
             </div>
             {/* 2 - Label envolvendo input */}
             <label htmlFor="email">
                 <span>E-mail</span>
                 {/* 4 - Simplificação de manipulação de state */}
-                <input type="email" name="email" id='email' placeholder='Digite o seu e-mail' onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" name="email" id='email' placeholder='Digite o seu e-mail' onChange={(e) => setEmail(e.target.value)} 
+                value={email}
+                />
             </label>
 
             <input type="submit" value="Enviar"/>
+
+            <button type="reset" onClick={handleLimpar}>Limpar</button>
 
         </form>
 
