@@ -10,7 +10,7 @@ function App() {
   const [login] = useState ([
 
     {id: 1, email: "admin@admin.com", senha:"admin1235" },
-    {id: 2, email: "xxhenriqueplayy848@gmail.com", senha:"xxhenriqueplayy848"}
+    {id: 2, email: "!!BANGBANG@gmail.com", senha:"!!BANG!!BANG"}
 
   ])
 
